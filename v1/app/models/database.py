@@ -1,4 +1,5 @@
 from v1.app.extension import db
+from flask_login import UserMixin # to manage session correctly
 
 """
     User - for customers
@@ -9,7 +10,7 @@ from v1.app.extension import db
     Payment - tracks Payments
     Review - reviews made
 """
-class User(db.Models):
+class User(db.Models, UserMixin):
     """User data"""
     __tablename__ = 'users'
 
