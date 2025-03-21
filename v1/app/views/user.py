@@ -1,6 +1,7 @@
 from v1.app.models.database import db, User
 from flask import request, render_template, jsonify
 from datetime import datetime
+from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt()
 
