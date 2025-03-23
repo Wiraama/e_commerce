@@ -1,6 +1,6 @@
 from flask import Flask
 from v1.app.config import config_by_name
-from v1.app.extension import app_extensions, db
+from v1.app.extension import app_extensions
 from v1.app.routes.main import main
 
 def create_app(config_name='development'):

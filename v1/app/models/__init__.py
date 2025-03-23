@@ -1,6 +1,6 @@
 # initializing folder
-from flask import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-from .database import User, Oder, OrderItem, Product, Payment
+from .database import User, Order, OrderItem, Product, Payment
