@@ -172,23 +172,24 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                         
           <div class="top-cart-content-wrapper">
             <div class="top-cart-content">
-              <ul class="scroller" style="height: 250px;">
-                {% if cart %}
-                {% for item in cart %}
-                <li>
-                  <a href="shop-item.html"><img src="{{ item.image }}" alt="" width="37" height="34"></a>
-                  <span class="cart-content-count">x 1</span>
-                  <strong><a href="shop-item.html"{{ item.name }}</a></strong>
-                  <em>$1230</em>
-                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                </li>
-                {%end for %}
-                {%end if %}
-              </ul>
-              <div class="text-right">
-                <a href="shop-shopping-cart.html" class="btn btn-default">View Cart</a>
-                <a href="shop-checkout.html" class="btn btn-primary">Checkout</a>
-              </div>
+              {% if cart %}
+                {{ cart }}
+                <ul class="scroller" style="height: 250px;">
+                  {% for item in cart %}
+                  <li>
+                    <a href="shop-item.html"><img src="{{ item.image }}" alt="" width="37" height="34"></a>
+                    <span class="cart-content-count">x {{ item.quantity }} </span>
+                    <strong><a href="shop-item.html">{{ item.name }}</a></strong>
+                    <em>${{ item.product_price }}</em>
+                    <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                  </li>
+                 {% endfor %}
+                </ul>
+                <div class="text-right">
+                  <a href="shop-shopping-cart.html" class="btn btn-default">View Cart</a>
+                  <a href="shop-checkout.html" class="btn btn-primary">Checkout</a>
+                </div>
+              {% endif %}
             </div>
           </div>            
         </div>

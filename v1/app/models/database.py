@@ -1,6 +1,7 @@
 from flask_login import UserMixin # to manage session correctly
 from flask_sqlalchemy import SQLAlchemy
 from enum import Enum
+from sqlalchemy.types import Enum as SQLAlchemyEnum
 
 db = SQLAlchemy()
 
@@ -28,6 +29,12 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"<User {self.name}>"
+    
+class Category(Enum):
+    MEN = "mens"
+    KIDS = "kids"
+    WOMEN = "women"
+    UNISEX = "unisex"
 
 class Product(db.Model):
     __tablename__ = 'products'
@@ -37,24 +44,13 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=True)
     price = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
+    category = db.Column(SQLAlchemyEnum(Category), nullable=False)
     image = db.Column(db.LargeBinary, nullable=False)
 
-    category = db.relationship("Category", backref="products")
-
     def __repr__(self):
-        return f"<Product {self.name}>"
+        return f"<Product {self.name} - Category: {self.category.id}>"
 
-class Category(Enum):
-    __tablename__ = 'categories'
-
-    MENS = 1
-    WOMEN = 2
-    KIDS = 3
-    UNISEX = 4
-
-    def __repr__(self):
-        return f"<Category {self.name}>"
+  
 
 class Cart(db.Model):
     # cart class
