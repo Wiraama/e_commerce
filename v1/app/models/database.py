@@ -2,6 +2,8 @@ from flask_login import UserMixin # to manage session correctly
 from flask_sqlalchemy import SQLAlchemy
 from enum import Enum
 from sqlalchemy.types import Enum as SQLAlchemyEnum
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 db = SQLAlchemy()
 
@@ -30,11 +32,14 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"<User {self.name}>"
     
-class Category(Enum):
-    MEN = "mens"
-    KIDS = "kids"
-    WOMEN = "women"
-    UNISEX = "unisex"
+class Category(db.Model):
+    __tablename__ = 'categories'
+
+    id = db.Column(db.Integer, primary_key=True)
+    category = db.Column(db.String(10), nullable=False)
+
+    def __repr__(self):
+        return f"<Category {self.category}>"
 
 class Product(db.Model):
     __tablename__ = 'products'
@@ -44,7 +49,7 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=True)
     price = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, nullable=False)
-    category = db.Column(SQLAlchemyEnum(Category), nullable=False)
+    category = db.Column(db.String(10), nullable=False)
     image = db.Column(db.LargeBinary, nullable=False)
 
     def __repr__(self):

@@ -2,15 +2,15 @@ from v1.app.models.database import Product, db, Category
 from flask import request, jsonify
 
 # add product to database
-def add_prduct():
+def add_product():
     name = request.form.get('name')
-    description = request.form.get('describtion')
+    description = request.form.get('description')
     price = request.form.get('price')
     stock = request.form.get('stock')
-    image_file = request.form.get('stock')
-    category_id = request.form.get('category_id')
+    image_file = request.form.get('image')
+    category_name = request.form.get('category')
 
-    if not all([name, category, description, price, stock, image, category_id]):
+    if not all([name, category_name, description, price, stock, image_file]):
         return jsonify({"error": "All spaces must be included"}), 400
     
     # converting to appropprite types
@@ -20,7 +20,7 @@ def add_prduct():
     except ValueError as e:
         return jsonify({"error": f"{e}"}), 400
     
-    category = Category.query.filter_by(category_id=category_id).first()
+    category = Category.query.filter_by(category=category_name).first()
 
     if not category:
         return jsonify({"error": "category not found"}), 400
@@ -34,10 +34,12 @@ def add_prduct():
         price=price,
         stock=stock,
         image=image,
-        category_id=category_id
+        category=category
     )
 
     db.session.add(new_product)
     db.session.commit()
 
-    return jsonify({"success": "product added"}), 200
+    products = Product.query.all()
+
+    return products
