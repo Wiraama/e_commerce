@@ -108,16 +108,18 @@
         <div class="product-list">
             <h2>Existing Products</h2>
             <ul>
-                {% for product in products %}
-                    <li>
-                        <strong>{{ product.name }}</strong><br>
-                        <p>{{ product.description }}</p>
-                        <p><strong>Price:</strong> ${{ product.price }}</p>
-                        <img src="{{ product.image }}" alt="{{ product.name }}">
-                    </li>
+                {% if products %}
+                    {% for product in products %}
+                        <li>
+                            <strong>{{ product.name }}</strong><br>
+                            <p>{{ product.description }}</p>
+                            <p><strong>Price:</strong> ${{ product.price }}</p>
+                            <img src="{{ product.image }}" alt="{{ product.name }}">
+                        </li>
+                    {% endfor %}
                 {% else %}
-                    <p>No products available yet.</p>
-                {% endfor %}
+                    <p>NoThing</p>
+                {% endif %}
             </ul>
         </div>
     </div>

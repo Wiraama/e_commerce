@@ -36,7 +36,7 @@ class Category(db.Model):
     __tablename__ = 'categories'
 
     id = db.Column(db.Integer, primary_key=True)
-    category = db.Column(db.String(10), nullable=False)
+    category_name = db.Column(db.String(10), nullable=False)
 
     products = db.relationship("Product", backref="categories", lazy=True, primaryjoin="Category.id == Product.category_id")
 
@@ -54,7 +54,7 @@ class Product(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
     image = db.Column(db.LargeBinary, nullable=False)
 
-    category = db.relationship("Category", backref="products")
+    category = db.relationship("Category", backref="product")
 
     def __repr__(self):
         return f"<Product {self.name} - Category: {self.category.id}>"
