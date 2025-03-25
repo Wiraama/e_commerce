@@ -7,7 +7,7 @@ def add_product():
     description = request.form.get('description')
     price = request.form.get('price')
     stock = request.form.get('stock')
-    image_file = request.form.get('image')
+    image_file = request.files.get('image')
     category_name = request.form.get('category')
 
     if not all([name, category_name, description, price, stock, image_file]):
@@ -34,7 +34,7 @@ def add_product():
         price=price,
         stock=stock,
         image=image,
-        category=category
+        category_id=category.id
     )
 
     db.session.add(new_product)

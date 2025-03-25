@@ -71,12 +71,12 @@
         
         <!-- Product Addition Form -->
         <h2>Add a New Product</h2>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Product Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
-            <select class="form-group" name="category" id="category">
+            <select class="form-group"    name="category" id="category">
                 <option value="kids">Kids</option>
                 <option value="mens">Men</option>
                 <option value="women">Women</option>

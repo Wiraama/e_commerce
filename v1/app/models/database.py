@@ -38,6 +38,8 @@ class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     category = db.Column(db.String(10), nullable=False)
 
+    products = db.relationship("Product", backref="categories", lazy=True, primaryjoin="Category.id == Product.category_id")
+
     def __repr__(self):
         return f"<Category {self.category}>"
 
@@ -49,8 +51,10 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=True)
     price = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, nullable=False)
-    category = db.Column(db.String(10), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
     image = db.Column(db.LargeBinary, nullable=False)
+
+    category = db.relationship("Category", backref="products")
 
     def __repr__(self):
         return f"<Product {self.name} - Category: {self.category.id}>"
