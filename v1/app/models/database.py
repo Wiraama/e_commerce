@@ -31,17 +31,6 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"<User {self.name}>"
-    
-class Category(db.Model):
-    __tablename__ = 'categories'
-
-    id = db.Column(db.Integer, primary_key=True)
-    category_name = db.Column(db.String(10), nullable=False)
-
-    products = db.relationship("Product", backref="categories", lazy=True, primaryjoin="Category.id == Product.category_id")
-
-    def __repr__(self):
-        return f"<Category {self.category}>"
 
 class Product(db.Model):
     __tablename__ = 'products'
@@ -51,15 +40,12 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=True)
     price = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), nullable=False)
-    image = db.Column(db.LargeBinary, nullable=False)
-
-    category = db.relationship("Category", backref="product")
+    category_name = db.Column(db.String(10), nullable=False)
+    image = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):
-        return f"<Product {self.name} - Category: {self.category.id}>"
+        return f"<Product {self.name} - Category: {self.category_name} Image url {self.image}>"
 
-  
 
 class Cart(db.Model):
     # cart class

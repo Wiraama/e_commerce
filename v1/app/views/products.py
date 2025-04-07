@@ -1,6 +1,22 @@
-from v1.app.models.database import Product, db, Category
-from flask import request, jsonify
+from v1.app.models.database import Product, db
+from flask import request, jsonify 
+import os, uuid
+from  werkzeug.utils import secure_filename
 
+def store_file(file):
+    folder = "v1/app/static/uploads"
+    os.makedirs(folder, exist_ok=True)
+    
+    _, ext = os.path.splitext(secure_filename(file.filename))
+    filename = f"{uuid.uuid4()}{ext}"
+    
+    storage_path = os.path.join(folder, filename)
+    file.save(storage_path)
+    
+    sliced_path = storage_path[6:]
+    print(sliced_path)
+    return sliced_path
+    
 # add product to database
 def add_product():
     name = request.form.get('name')
@@ -19,27 +35,20 @@ def add_product():
         stock = int(stock)
     except ValueError as e:
         return jsonify({"error": f"{e}"}), 400
-    
-    category = Category.query.filter_by(category=category_name).first()
-
-    if not category:
-        return jsonify({"error": "category not found"}), 400
 
     # handling image file
-    image = image_file.read()
+    image_url = store_file(image_file)
 
     new_product = Product(
         name=name,
         description=description,
         price=price,
         stock=stock,
-        image=image,
-        category_id=category.id
+        image=image_url,
+        category_name=category_name
     )
 
     db.session.add(new_product)
     db.session.commit()
 
-    products = Product.query.all()
-
-    return products
+    return jsonify({"sucess" : "Product added"})
