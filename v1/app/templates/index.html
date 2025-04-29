@@ -1,682 +1,627 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>WirShop</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="static/css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="static/css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="static/images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="static/css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-      <!-- font awesome -->
-      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!--  -->
-      <!-- owl stylesheets -->
-      <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
-      <link rel="stylesheet" href="static/css/owl.carousel.min.css">
-      <link rel="stylesoeet" href="static/css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnstatic1/js/.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   </head>
-   <body>
-      <!-- banner bg main start -->
-      <div class="banner_bg_main">
-         <!-- header top section start -->
-         <div class="container">
-            <div class="header_section_top">
-               <div class="row">
-                  <div class="col-sm-12">
-                     <div class="custom_menu">
-                        <ul>
-                           <li><a href="#">Best Sellers</a></li>
-                           <li><a href="#">Gift Ideas</a></li>
-                           <li><a href="#">New Releases</a></li>
-                           <li><a href="#">Today's Deals</a></li>
-                           <li><a href="#">Customer Service</a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- header top section start -->
-         <!-- logo section start -->
-         <div class="logo_section">
-            <div class="container">
-               <div class="row">
-                  <div class="col-sm-12">
-                     <div class="logo"><a href="index.html"><img src="static/images/logo.png"></a></div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- logo section end -->
-         <!-- header section start -->
-         <div class="header_section">
-            <div class="container">
-               <div class="containt_main">
-                  <div id="mySidenav" class="sidenav">
-                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                     <a href="index.html">Home</a>
-                     <a href="fashion.html">Men</a>
-                     <a href="electronic.html">Women</a>
-                     <a href="jewellery.html">Kids</a>
-                     <a href="#">Unisex</a>
-                  </div>
-                  <span class="toggle_icon" onclick="openNav()"><img src="static/images/toggle-icon.png"></span>
-                  <div class="dropdown">
-                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
-                     </button>
-                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                     </div>
-                  </div>
-                  <div class="main">
-                     <!-- Another variation with a button -->
-                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search this blog">
-                        <div class="input-group-append">
-                           <button class="btn btn-secondary" type="button" style="background-color: #f26522; border-color:#f26522 ">
-                           <i class="fa fa-search"></i>
-                           </button>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="header_box">
-                     <div class="lang_box ">
-                        <a href="#" title="Language" class="nav-link" data-toggle="dropdown" aria-expanded="true">
-                        <img src="static/images/flag-uk.png" alt="flag" class="mr-2 " title="United Kingdom"> English <i class="fa fa-angle-down ml-2" aria-hidden="true"></i>
-                        </a>
-                        <div class="dropdown-menu ">
-                           <a href="#" class="dropdown-item">
-                           <img src="static/images/flag-france.png" class="mr-2" alt="flag">
-                           French
-                           </a>
-                        </div>
-                     </div>
-                     <div class="login_menu">
-                        <ul>
-                           <li><a href="#" id="cartLink">
-                               <i class="fa fa-shopping-cart" aria-hidden="true"> {{ totals.total_items }}</i>
-                               <span class="padding_10">Cart</span></a>
-                           </li>
-                           <li>
-                               <a href="#" id="loginLink">
-                               <i class="fa fa-user" aria-hidden="true"></i>
-                               <span class="padding_10">Login</span></a>
-                           </li>
-                       </ul>
-                       
-                       <!-- Modal for Login -->
-                       <div id="loginModal" class="modal">
-                        <!--<span class="close-btn">&times;</span> -->
-                           <div class="modal-content">
-                               <h2>Login</h2>
-                               <form>
-                                   <input type="text" id="username" name="username" placeholder="Email">
-                                   <span></span>
-                                   <input type="password" id="password" name="password" placeholder="Password"><br>
-                                   <button type="submit">Login</button>
-                               </form>
-                           </div>
-                       </div>
-                       
-                       <!-- Modal for Cart -->
-                       <div id="cartModal" class="modal">
-                        <!--<span class="close-btn">&times;</span>-->
-                           <div class="modal-content">
-                               <h2>Your Cart</h2>
-                               <ul id="cartItems">
-                                 {% if cart %}
-                                     {% for item in cart %}
-                                         <li>
-                                             <img src="{{ item.image }}" alt="{{ item.product_name }}" style="width: 50px; height: 50px;"> <!-- Assuming 'image' is the URL of the image -->
-                                             <span>{{ item.product_name }} X {{ item.quantity }}</span> <!-- Display product name and quantity -->
-                                         </li>
-                                     {% endfor %}
-                                 {% else %}
-                                     <li>Empty cart, please shop!</li>
-                                 {% endif %}
-                               </ul>
-                               <button id="checkoutButton">{{ totals.total_price }}  Kes<br>Checkout</button>
-                           </div>
-                       </div>                       
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- header section end -->
-         <!-- banner section start -->
-         <div class="banner_section layout_padding">
-            <div class="container">
-               <div id="my_slider" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                     <div class="carousel-item active">
-                        <div class="row">
-                           <div class="col-sm-12">
-                              <h1 class="banner_taital">Get Start <br>Mens Clothes Shoping</h1>
-                              <div class="buynow_bt"><a href="mens.html">Buy Now</a></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-12">
-                              <h1 class="banner_taital">Get Start <br>Women Clothes Shoping</h1>
-                              <div class="buynow_bt"><a href="womens.html">Buy Now</a></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-12">
-                              <h1 class="banner_taital">Get Start <br>Kids Clothes Shoping</h1>
-                              <div class="buynow_bt"><a href="kids.html">Buy Now</a></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-                  <i class="fa fa-angle-left"></i>
-                  </a>
-                  <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-                  <i class="fa fa-angle-right"></i>
-                  </a>
-               </div>
-            </div>
-         </div>
-         <!-- banner section end -->
-      </div>
-      <!-- banner bg main end -->
-      <!-- fashion section start -->
-      <div class="fashion_section">
-         <div id="main_slider" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <h1 class="fashion_taital">New Men Wear</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Man T -shirt</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/tshirt-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Man -shirt</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/dress-shirt-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Woman Scart</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/women-clothes-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="fashion_taital">New Women Wear</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Man T -shirt</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/tshirt-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Man -shirt</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/dress-shirt-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Woman Scart</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/women-clothes-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="fashion_taital">New Kids Wear</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Man T -shirt</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/tshirt-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Man -shirt</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/dress-shirt-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Woman Scart</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="static/images/women-clothes-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
+<html style="font-size: 16px;" lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+	<link rel="icon" href="{{ url_for('static', filename='static/images/logo12.png') }}">
+    <meta name="description" content="">
+    <title>Jumia Kenya Clone | by Wiriama</title>
+    <link rel="stylesheet" href="static/css/page.css" media="screen">
+	<link rel="stylesheet" href="static/css/index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="static/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="static/js/page.js" defer=""></script>
+    <meta name="author" content="Wiriama">
+    <meta name="referrer" content="origin">
+	<!--<meta http-equiv="refresh" content="1">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "Organization",
+			"name": ""
+		}
+	</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+	<meta data-intl-tel-input-cdn-path="intlTelInput/">
+  </head>
+  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-custom-color-1 u-stick-footer u-xl-mode" data-lang="en"><header class=" u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-clearfix u-header u-section-row-container" id="header" style="" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-section-rows">
+        <div class="u-grey-80 u-hidden-xs u-section-row" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+          <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xs u-sheet-1">
+            <a href="{{ url_for('main.not_created') }}" class="u-active-none u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-custom-color-1 u-btn-1"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 40 40" style="width: 1em; height: 1em;"><switch><g><path fill="currentColor" d="M36,20c0,8.8-7.2,16-16,16S4,28.8,4,20S11.2,4,20,4S36,11.2,36,20z M13.3,30.3l6.7-4.9l6.7,4.9
+			c0.2,0.1,0.4,0.1,0.6,0c0.2-0.1,0.2-0.4,0.2-0.6l-2.6-7.9l6.7-4.9c0.2-0.1,0.2-0.4,0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.3h-8.3
+			l-2.6-7.9c-0.1-0.5-0.8-0.5-1,0L16.9,16H8.6c-0.2,0-0.4,0.1-0.5,0.3c-0.1,0.2,0,0.4,0.2,0.6l6.7,4.9l-2.6,7.9
+			c-0.1,0.2,0,0.4,0.2,0.6c0.1,0.1,0.2,0.1,0.3,0.1S13.2,30.3,13.3,30.3z"></path>
+</g>
+</switch></svg></span>&nbsp; &nbsp;Sell on Jumia
             </a>
-            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-            </a>
-         </div>
-      </div>
-      <!-- fashion section end -->
-      <!-- electronic section start -->
-      <div class="fashion_section">
-         <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <h1 class="fashion_taital">Unisex Clothing</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Laptop</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/laptop-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Mobile</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/mobile-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Computers</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/computer-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="fashion_taital">Electronic</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Laptop</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/laptop-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Mobile</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/mobile-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Computers</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/computer-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="fashion_taital">Unisex</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Laptop</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/laptop-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Mobile</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/mobile-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Computers</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="static/images/computer-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+            <p class="u-custom-font u-heading-font u-text u-text-default-lg u-text-default-xl u-text-1">JUMIA&nbsp;<span class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 40 40" style="width: 1em; height: 1em;"><switch><g><path fill="currentColor" d="M36,20c0,8.8-7.2,16-16,16S4,28.8,4,20S11.2,4,20,4S36,11.2,36,20z M13.3,30.3l6.7-4.9l6.7,4.9
+			c0.2,0.1,0.4,0.1,0.6,0c0.2-0.1,0.2-0.4,0.2-0.6l-2.6-7.9l6.7-4.9c0.2-0.1,0.2-0.4,0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.3h-8.3
+			l-2.6-7.9c-0.1-0.5-0.8-0.5-1,0L16.9,16H8.6c-0.2,0-0.4,0.1-0.5,0.3c-0.1,0.2,0,0.4,0.2,0.6l6.7,4.9l-2.6,7.9
+			c-0.1,0.2,0,0.4,0.2,0.6c0.1,0.1,0.2,0.1,0.3,0.1S13.2,30.3,13.3,30.3z"></path>
+</g>
+</switch></svg></span>
+            </p>
+          </div>
+        </div>
+        <div class="u-black u-section-row u-sticky u-sticky-90be u-section-row-2">
+          <div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-2">
+            <a href="{{ url_for('main.index') }}">
+			  <p class="u-custom-font u-heading-font u-text u-text-default-lg u-text-default-xl u-text-2">JUMIA&nbsp;<span class="u-icon u-icon-3"><svg class="u-svg-content" viewBox="0 0 40 40" style="width: 1em; height: 1em;"><switch><g><path fill="currentColor" d="M36,20c0,8.8-7.2,16-16,16S4,28.8,4,20S11.2,4,20,4S36,11.2,36,20z M13.3,30.3l6.7-4.9l6.7,4.9
+			c0.2,0.1,0.4,0.1,0.6,0c0.2-0.1,0.2-0.4,0.2-0.6l-2.6-7.9l6.7-4.9c0.2-0.1,0.2-0.4,0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.3h-8.3
+			l-2.6-7.9c-0.1-0.5-0.8-0.5-1,0L16.9,16H8.6c-0.2,0-0.4,0.1-0.5,0.3c-0.1,0.2,0,0.4,0.2,0.6l6.7,4.9l-2.6,7.9
+			c-0.1,0.2,0,0.4,0.2,0.6c0.1,0.1,0.2,0.1,0.3,0.1S13.2,30.3,13.3,30.3z"></path>
+</g>
+</switch></svg></span>
+              </p>
+			</a>
+            <div class="u-active-none dropdown u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-white u-btn-2">
+			  <span class="u-file-icon u-icon u-text-white u-icon-4">
+			    <i class="fas fa-user"></i>
+			  </span>Account<br>
+			  <div class="dropdown-menu">
+			    <a href="{{ url_for('main.not_created') }}" class="acc-button">Sign In</a>
+				<a href="{{ url_for('main.not_created') }}"><i class="far fa-user"></i>  My Account</a>
+				<a href="{{ url_for('main.not_created') }}"><i class="fas fa-truck"></i>  Orders</a>
+				<a href="{{ url_for('main.not_created') }}"><i class="far fa-heart"></i>  Wishlist</a>
+			  </div>
             </div>
-            <a class="carousel-control-prev" href="#electronic_main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
+            <div class="u-active-none dropdown u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hidden-xs u-hover-none u-none u-text-white u-btn-3">
+			  <span class="u-file-icon u-icon u-text-white u-icon-5">
+			    <i class="fas fa-question-circle"></i>
+			  </span>Help
+			   <div class="dropdown-menu">
+				<a href="{{ url_for('main.not_created') }}">Help Center</a>
+				<a href="{{ url_for('main.not_created') }}">Payment Option</a>
+				<a href="{{ url_for('main.not_created') }}">Track Order</a>
+				<a href="{{ url_for('main.not_created') }}">Refund option</a>
+				<a href="{{ url_for('main.not_created') }}">Warranty</a>
+				<div><button class="acc-button"><i class="far fa-massages"></i>Live Chat</button></div>
+			  </div>
+            </div>
+            <form action="#" class="u-border-1 u-border-grey-30 u-grey-75 u-radius u-search u-search-left u-search-1" data-search-token="no-license" data-href="search/search.html" data-page-id="88829851">
+              <div class="u-search-overlay"></div>
+              <button class="u-search-button" type="submit"><span class="u-search-icon u-search-icon-1">
+                  <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966"><use xlink:href="#svg-52a5"></use></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-52a5" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" class="u-svg-content"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg></span>
+              </button>
+              <input class="u-custom-font u-heading-font u-search-input u-text-white u-search-input-1" type="search" name="search" value="" placeholder="Search Products, Brands and Categories">
+            </form>
+            <a href="{{ url_for('main.not_created') }}" class="u-active-none u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-body-alt-color u-btn-4">
+			  <span class="u-file-icon u-icon u-text-white u-icon-6">
+			    <div class="icon-badge">
+			      <i class="fas fa-shopping-cart"></i>
+				  <span class="badge">{{ totals.total_items }}</span>
+				</div>
+			 </span>Cart
             </a>
-            <a class="carousel-control-next" href="#electronic_main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
+            <a href="{{ url_for('main.not_created') }}" class="u-border-none u-btn u-button-style u-custom-color-1 u-custom-font u-heading-font u-hidden-xs u-hover-palette-3-base u-text-hover-palette-3-base u-btn-5">Search </a>
+          </div>
+        </div>
+      </div></header>
+    <section class="u-clearfix u-custom-color-1 u-section-1" id="block-2">
+      
+      
+      
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-valign-middle-xs u-sheet-1">
+        <div class="u-black u-container-style u-group u-hidden-xs u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <a href="" class="u-active-none u-align-left u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-body-alt-color u-btn-1"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 40 40" style="width: 1em; height: 1em;"><switch><g><path fill="currentColor" d="M36,20c0,8.8-7.2,16-16,16S4,28.8,4,20S11.2,4,20,4S36,11.2,36,20z M13.3,30.3l6.7-4.9l6.7,4.9
+			c0.2,0.1,0.4,0.1,0.6,0c0.2-0.1,0.2-0.4,0.2-0.6l-2.6-7.9l6.7-4.9c0.2-0.1,0.2-0.4,0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.3h-8.3
+			l-2.6-7.9c-0.1-0.5-0.8-0.5-1,0L16.9,16H8.6c-0.2,0-0.4,0.1-0.5,0.3c-0.1,0.2,0,0.4,0.2,0.6l6.7,4.9l-2.6,7.9
+			c-0.1,0.2,0,0.4,0.2,0.6c0.1,0.1,0.2,0.1,0.3,0.1S13.2,30.3,13.3,30.3z"></path>
+</g>
+</switch></svg></span>&nbsp; &nbsp;HELP CENTER<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Guide To CustomerCare
             </a>
-         </div>
-      </div>
-      <!-- electronic section end -->
-      <!-- jewellery  section start -->
-      <div class="jewellery_section">
-         <div id="jewellery_main_slider" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <h1 class="fashion_taital"></h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Jumkas</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/jhumka-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Necklaces</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/neklesh-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Kangans</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/kangan-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+            <a href="" class="u-active-none u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-body-alt-color u-btn-2"><span class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 40 40" style="width: 1em; height: 1em;"><switch><g><path fill="currentColor" d="M36,20c0,8.8-7.2,16-16,16S4,28.8,4,20S11.2,4,20,4S36,11.2,36,20z M13.3,30.3l6.7-4.9l6.7,4.9
+			c0.2,0.1,0.4,0.1,0.6,0c0.2-0.1,0.2-0.4,0.2-0.6l-2.6-7.9l6.7-4.9c0.2-0.1,0.2-0.4,0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.3h-8.3
+			l-2.6-7.9c-0.1-0.5-0.8-0.5-1,0L16.9,16H8.6c-0.2,0-0.4,0.1-0.5,0.3c-0.1,0.2,0,0.4,0.2,0.6l6.7,4.9l-2.6,7.9
+			c-0.1,0.2,0,0.4,0.2,0.6c0.1,0.1,0.2,0.1,0.3,0.1S13.2,30.3,13.3,30.3z"></path>
+</g>
+</switch></svg></span>&nbsp; &nbsp;TOP DEALS<br>&nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size: 0.875rem;">LIVE NOW</span>
+            </a>
+            <a href="" class="u-active-none u-align-left u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-body-alt-color u-btn-3"><span class="u-icon u-icon-3"><svg class="u-svg-content" viewBox="0 0 40 40" style="width: 1em; height: 1em;"><switch><g><path fill="currentColor" d="M36,20c0,8.8-7.2,16-16,16S4,28.8,4,20S11.2,4,20,4S36,11.2,36,20z M13.3,30.3l6.7-4.9l6.7,4.9
+			c0.2,0.1,0.4,0.1,0.6,0c0.2-0.1,0.2-0.4,0.2-0.6l-2.6-7.9l6.7-4.9c0.2-0.1,0.2-0.4,0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.3h-8.3
+			l-2.6-7.9c-0.1-0.5-0.8-0.5-1,0L16.9,16H8.6c-0.2,0-0.4,0.1-0.5,0.3c-0.1,0.2,0,0.4,0.2,0.6l6.7,4.9l-2.6,7.9
+			c-0.1,0.2,0,0.4,0.2,0.6c0.1,0.1,0.2,0.1,0.3,0.1S13.2,30.3,13.3,30.3z"></path>
+</g>
+</switch></svg></span>&nbsp; &nbsp;SELL ON JUMIA<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Million Of Visitors
+            </a>
+          </div>
+        </div>
+        <div class="u-container-style u-grey-10 u-group u-hidden-xs u-group-2">
+          <div class="u-container-layout u-valign-middle-lg u-container-layout-2">
+            <div data-interval="3000" data-u-ride="carousel" class="u-carousel u-expanded-width u-hidden-xs u-slider u-slider-1" id="carousel-a537">
+              <ol class="u-absolute-hcenter u-carousel-indicators u-hidden u-carousel-indicators-1">
+                <li data-u-target="#carousel-a537" class="u-active u-active-grey-10 u-grey-30 u-shape-circle" data-u-slide-to="0" style="width: 10px; height: 10px;"></li>
+                <li data-u-target="#carousel-a537" class="u-active-grey-10 u-grey-30 u-shape-circle" data-u-slide-to="1" style="width: 10px; height: 10px;"></li>
+              </ol>
+              <div class="u-carousel-inner" role="listbox">
+                <div class="u-active u-carousel-item u-container-style u-custom-color-1 u-slide u-carousel-item-1">
+                  <div class="u-container-layout u-valign-middle-xl u-valign-middle-xs u-container-layout-3">
+                    <h3 class="u-text u-text-default-xl u-text-1" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;middle&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">0745040967 </h3>
                   </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="fashion_taital">Jewellery Accessories</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Jumkas</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/jhumka-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Necklaces</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/neklesh-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Kangans</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/kangan-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                </div>
+                <div class="u-align-center u-carousel-item u-container-align-center u-container-style u-custom-color-1 u-slide u-carousel-item-2">
+                  <div class="u-container-layout u-valign-top-md u-container-layout-4">
+                    <h3 class="u-text u-text-2"><span style="font-style: italic; font-size: 0.75rem;">Welcome to</span>
+                      <br><span style="font-weight: 700; font-size: 1.125rem;">JUMIA CLO​​NE</span>
+                      <br><span style="font-style: italic; font-size: 0.875rem;">by Wiriama</span>
+                    </h3>
                   </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="fashion_taital">Jewellery Accessories</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Jumkas</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/jhumka-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Necklaces</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/neklesh-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Kangans</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="static/images/kangan-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                </div>
+              </div>
+              <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-hidden u-spacing-5 u-text-grey-30 u-carousel-control-1" href="#carousel-a537" role="button" data-u-slide="prev"><span aria-hidden="true">
+                  <svg viewBox="0 0 477.175 477.175"><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                    c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path></svg></span><span class="sr-only">Previous</span>
+              </a>
+              <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-hidden u-spacing-5 u-text-grey-30 u-carousel-control-2" href="#carousel-a537" role="button" data-u-slide="next"><span aria-hidden="true">
+                  <svg viewBox="0 0 477.175 477.175"><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"></path></svg></span><span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="u-container-style u-custom-color-3 u-effect-fade u-group u-hidden-xs u-hover-box u-shape-rectangle u-group-3" data-image-width="2000" data-image-height="1333">
+          <div class="u-back-slide u-container-layout u-container-layout-5">
+            <a href="{{ url_for('main.not_created') }}" class="u-border-none u-btn u-button-style u-custom-font u-dialog-link u-heading-font u-hover-feature u-none u-btn-4"><span class="u-file-icon u-icon u-text-white u-icon-4"><img src="static/images/1077063-281677a1.png" alt=""></span>&nbsp; &nbsp;Account<br>
+            </a>
+            <a href="{{ url_for('main.not_created') }}" class="u-border-none u-btn u-button-style u-custom-font u-dialog-link u-heading-font u-hover-feature u-none u-btn-5"><span class="u-file-icon u-icon u-text-white u-icon-5"><img src="static/images/1077063-281677a1.png" alt=""></span>&nbsp; &nbsp;Account<br>
+            </a>
+            <a href="{{ url_for('main.not_created') }}" class="u-active-none u-border-none u-btn u-button-style u-custom-font u-dialog-link u-heading-font u-hover-feature u-hover-none u-none u-btn-6"><span class="u-file-icon u-icon u-text-white u-icon-6"><img src="static/images/1077063-281677a1.png" alt=""></span>&nbsp; &nbsp;Account<br>
+            </a>
+          </div>
+          <div class="u-black u-container-layout u-opacity u-opacity-25 u-over-slide u-container-layout-6"></div>
+        </div>
+        <div class="u-container-style u-grey-10 u-group u-group-4">
+          <div class="u-container-layout u-valign-middle-sm u-container-layout-7">
+            <div class="custom-expanded u-carousel u-expanded-width-lg u-expanded-width-xl u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-on-hover u-gallery-1" data-interval="5000" data-u-ride="carousel" id="carousel-1872">
+              <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-2">
+                <li data-u-target="#carousel-1872" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                <li data-u-target="#carousel-1872" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                <li data-u-target="#carousel-1872" data-u-slide-to="2" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                <li data-u-target="#carousel-1872" data-u-slide-to="3" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+                <li data-u-target="#carousel-1872" data-u-slide-to="4" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+              </ol>
+              <div class="u-carousel-inner u-gallery-inner" role="listbox">
+                <div class="u-active u-carousel-item u-effect-fade u-gallery-item u-carousel-item-3">
+                  <div class="u-back-slide" data-image-width="711" data-image-height="400">
+                    <img class="u-back-image u-expanded" src="static/images/ad1.jpg">
                   </div>
-               </div>
+                  <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
+                    <h3 class="u-gallery-heading" style="font-weight: 700;"></h3>
+                    <p class="u-gallery-text"></p>
+                  </div>
+                </div>
+                <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-4">
+                  <div class="u-back-slide" data-image-width="600" data-image-height="351">
+                    <img class="u-back-image u-expanded" src="static/images/ad3.webp">
+                  </div>
+                  <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-3">
+                    <h3 class="u-gallery-heading" style="font-weight: 700;"></h3>
+                    <p class="u-gallery-text"></p>
+                  </div>
+                </div>
+                <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-5" data-image-width="369" data-image-height="136">
+                  <div class="u-back-slide">
+                    <img class="u-back-image u-expanded" src="static/images/ad2.jfif">
+                  </div>
+                  <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-4"></div>
+                  <style data-mode="XL" data-visited="true"></style>
+                  <style data-mode="LG"></style>
+                  <style data-mode="MD"></style>
+                  <style data-mode="SM"></style>
+                  <style data-mode="XS"></style>
+                </div>
+                <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-6" data-image-width="711" data-image-height="400">
+                  <div class="u-back-slide">
+                    <img class="u-back-image u-expanded" src="static/images/ad1.jpg">
+                  </div>
+                  <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-5"></div>
+                  <style data-mode="XL" data-visited="true"></style>
+                  <style data-mode="LG"></style>
+                  <style data-mode="MD"></style>
+                  <style data-mode="SM"></style>
+                  <style data-mode="XS"></style>
+                </div>
+                <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-7" data-image-width="500" data-image-height="281">
+                  <div class="u-back-slide">
+                    <img class="u-back-image u-expanded" src="static/images/Jumia-Logo1.jpg">
+                  </div>
+                  <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-6"></div>
+                  <style data-mode="XL" data-visited="true"></style>
+                  <style data-mode="LG"></style>
+                  <style data-mode="MD"></style>
+                  <style data-mode="SM"></style>
+                  <style data-mode="XS"></style>
+                </div>
+              </div>
+              <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-hidden u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-3" href="#carousel-1872" role="button" data-u-slide="prev"><span aria-hidden="true">
+                  <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg></span><span class="sr-only">
+                  <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg></span>
+              </a>
+              <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-hidden u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-4" href="#carousel-1872" role="button" data-u-slide="next"><span aria-hidden="true">
+                  <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg></span><span class="sr-only">
+                  <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg></span>
+              </a>
             </div>
-            <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-            </a>
-            <div class="loader_main">
-               <div class="loader"></div>
+          </div>
+        </div>
+         <div class="custom-expanded u-black u-container-style u-group u-group-5">
+          <div class="u-container-layout u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-8">
+            <div class="u-container-style u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-expanded-width-xs u-group u-group-6">
+              <div class="u-container-layout u-container-layout-9">
+                <a href="" class="u-active-none u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-white u-btn-7"><span class="u-file-icon u-icon u-icon-7"><img src="static/images/3649458.png" alt=""></span>&nbsp; &nbsp;Flash Sales | Live Now
+                </a>
+                <p class="u-custom-font u-heading-font u-text u-text-default u-text-3">Time Left </p>
+                <h3 class="u-text u-text-default u-text-4"><span id="timer"></span></h3>
+                <a href="" class="u-active-none u-btn u-btn-rectangle u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-white u-btn-8">&nbsp; See All&nbsp; &nbsp;<span class="u-file-icon u-icon u-text-white u-icon-8"><img src="static/images/32213-7d502b98.png" alt=""></span>
+                </a>
+              </div>
             </div>
-         </div>
+            <div class="u-expanded-width u-list u-list-1">
+              <div class="u-repeater u-repeater-1">
+			    {% if products %}
+			      {% for product in products[4:10] %}
+					<div class="u-container-style u-list-item u-repeater-item">
+					  <div class="u-container-layout u-similar-container u-container-layout-10">
+						<img class="u-expanded-width u-hover-feature u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+						<p class="u-custom-font u-heading-font u-text u-text-default u-text-5"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
+						  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
+						  <br><span style="font-size: 0.8125rem;" ><s>ksh {{ product.x_price }}</s></span>
+						  <br>{{ product.stock }} items&nbsp;left
+						</p>
+					  </div>
+					</div>
+				  {% endfor %}
+				{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="custom-expanded u-black u-container-style u-group u-group-7">
+          <div class="u-container-layout u-container-layout-16">
+            <h3 class="u-text u-text-default u-text-11">Sponsored Products </h3>
+            <div class="u-expanded-width u-list u-list-2">
+              <div class="u-repeater u-repeater-2">
+			    {% if products %}
+					{% for product in products[11:17] %}
+						<div class="u-container-style u-list-item u-repeater-item">
+						  <div class="u-container-layout u-similar-container u-container-layout-17">
+							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-7" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<p class="u-custom-font u-heading-font u-text u-text-default u-text-12"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
+							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
+							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
+							  <br>
+							</p>
+						  </div>
+						</div>
+					{% endfor %}
+				{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- jewellery  section end -->
-      <!-- footer section start -->
-      <div class="footer_section layout_padding">
-         <div class="container">
-            <div class="footer_logo"><a href="index.html"><img src="static/images/footer-logo.png"></a></div>
-            <div class="input_bt">
-               <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email">
-               <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-section-2" id="block-3">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="custom-expanded u-black u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h3 class="u-text u-text-default u-text-1">Mens Wears </h3>
+            <div class="u-expanded-width u-list u-list-1">
+              <div class="u-repeater u-repeater-1">
+			    {% if products %}
+					{% for product in products %}
+					  {% if product.category_name == "mens" %}
+						<div class="u-container-style u-list-item u-repeater-item">
+						  <div class="u-container-layout u-similar-container u-container-layout-2">
+							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<p class="u-custom-font u-heading-font u-text u-text-default u-text-2"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
+							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
+							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
+							  <br>
+							</p>
+						  </div>
+						</div>
+					  {% endif %}
+					{% endfor %}
+				{% endif %}
+              </div>
             </div>
-            <div class="footer_menu">
-               <ul>
-                  <li><a href="#">Best Sellers</a></li>
-                  <li><a href="#">Gift Ideas</a></li>
-                  <li><a href="#">New Releases</a></li>
-                  <li><a href="#">Today's Deals</a></li>
-                  <li><a href="#">Customer Service</a></li>
-               </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-section-3" id="sec-f4ed">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="custom-expanded u-black u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h3 class="u-text u-text-default u-text-1">Women's Wears </h3>
+            <div class="u-expanded-width u-list u-list-1">
+              <div class="u-repeater u-repeater-1">
+			    {% if products %}
+					{% for product in products %}
+					  {% if product.category_name == "womens" %}
+						<div class="u-container-style u-list-item u-repeater-item">
+						  <div class="u-container-layout u-similar-container u-container-layout-2">
+							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<p class="u-custom-font u-heading-font u-text u-text-default u-text-2"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
+							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
+							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
+							  <br>
+							</p>
+						  </div>
+						</div>
+					  {% endif %}
+					{% endfor %}
+				{% endif %}
+              </div>
             </div>
-            <div class="location_main">Help Line  Number : <a href="#">+1 1800 1200 1200</a></div>
-         </div>
+          </div>
+        </div>
       </div>
-      <!-- footer section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text">© 2020 All Rights Reserved. Design by <a href="https://html.design">Free html  Templates</a></p>
-         </div>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-section-4" id="sec-1251">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+        <div class="custom-expanded u-black u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h3 class="u-text u-text-default u-text-1">Kid's Wears </h3>
+            <div class="u-expanded-width u-list u-list-1">
+              <div class="u-repeater u-repeater-1">
+			    {% if products %}
+					{% for product in products %}
+					  {% if product.category_name == "kids" %}
+						<div class="u-container-style u-list-item u-repeater-item">
+						  <div class="u-container-layout u-similar-container u-container-layout-2">
+							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<p class="u-custom-font u-heading-font u-text u-text-default u-text-2"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
+							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
+							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
+							  <br>
+							</p>
+						  </div>
+						</div>
+					  {% endif %}
+					{% endfor %}
+				{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="static/js/jquery.min.js"></script>
-      <script src="static/js/popper.min.js"></script>
-      <script src="static/js/bootstrap.bundle.min.js"></script>
-      <script src="static/js/jquery-3.0.0.min.js"></script>
-      <script src="static/js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="static/js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="static/js/custom.js"></script>
-      <script>
-         function openNav() {
-           document.getElementById("mySidenav").style.width = "250px";
-         }
-         
-         function closeNav() {
-           document.getElementById("mySidenav").style.width = "0";
-         }
-      </script>
-   </body>
-</html>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-section-5" id="sec-f705">
+      <div class="u-clearfix u-sheet u-valign-middle-sm u-sheet-1">
+        <div class="custom-expanded u-black u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h3 class="u-text u-text-default u-text-1">Unisex Wears </h3>
+            <div class="u-expanded-width u-list u-list-1">
+              <div class="u-repeater u-repeater-1">
+			    {% if products %}
+					{% for product in products %}
+					  {% if product.category_name == "unisex" %}
+						<div class="u-container-style u-list-item u-repeater-item">
+						  <div class="u-container-layout u-similar-container u-container-layout-2">
+							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<p class="u-custom-font u-heading-font u-text u-text-default u-text-2"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
+							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
+							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
+							  <br>
+							</p>
+						  </div>
+						</div>
+					  {% endif %}
+					{% endfor %}
+				{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-footer u-grey-80 u-footer" id="footer"><div class="u-black u-container-style u-expanded-width u-group u-group-1">
+        <div class="u-container-layout u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1">
+          <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+              <div class="u-layout-row">
+                <div class="u-container-style u-layout-cell u-size-11 u-layout-cell-1">
+                  <div class="u-container-layout u-valign-top-lg u-valign-top-xl u-container-layout-2">
+                    <p class="u-text u-text-default-lg u-text-default-xl u-text-1">JUMIA&nbsp;<span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 40 40" style="width: 1em; height: 1em;"><switch><g><path fill="currentColor" d="M36,20c0,8.8-7.2,16-16,16S4,28.8,4,20S11.2,4,20,4S36,11.2,36,20z M13.3,30.3l6.7-4.9l6.7,4.9
+			c0.2,0.1,0.4,0.1,0.6,0c0.2-0.1,0.2-0.4,0.2-0.6l-2.6-7.9l6.7-4.9c0.2-0.1,0.2-0.4,0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.3h-8.3
+			l-2.6-7.9c-0.1-0.5-0.8-0.5-1,0L16.9,16H8.6c-0.2,0-0.4,0.1-0.5,0.3c-0.1,0.2,0,0.4,0.2,0.6l6.7,4.9l-2.6,7.9
+			c-0.1,0.2,0,0.4,0.2,0.6c0.1,0.1,0.2,0.1,0.3,0.1S13.2,30.3,13.3,30.3z"></path>
+</g>
+</switch></svg></span>
+                    </p>
+                  </div>
+                </div>
+                <div class="u-container-style u-hidden-sm u-layout-cell u-size-29 u-layout-cell-2">
+                  <div class="u-container-layout u-container-layout-3">
+                    <h3 class="u-text u-text-2"> New to Jumia?<br><span style="font-size: 0.875rem;">Subscribe to our newsletter to get updates on our latest offers!</span>
+                    </h3>
+                    <div class="u-form u-form-1">
+                      <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" source="email" name="form" style="padding: 1px;">
+                        <div class="u-form-email u-form-group u-label-none">
+                          <label for="email-d8e2" class="u-label">Email</label>
+                          <input type="email" placeholder="Enter a valid email address" id="email-d8e2" name="email" class="u-border-2 u-border-black u-input u-input-rectangle" required="">
+                        </div>
+                        <div class="u-align-left u-form-group u-form-submit u-label-none">
+                          <input type="submit" value="submit" class="u-form-control-hidden">
+                          <a href="#" class="u-border-2 u-border-grey-10 u-border-hover-custom-color-1 u-btn u-btn-submit u-button-style u-none u-btn-1">Subscribe</a>
+                        </div>
+                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+                        <input type="hidden" name="formServices" value="8aadad21-cd1f-3d64-a0bb-76eabc5687a8">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+                  <div class="u-container-layout u-container-layout-4">
+                    <p class="u-heading-font u-text u-text-3"><span class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 40 40" style="width: 1em; height: 1em;"><switch><g><path fill="currentColor" d="M36,20c0,8.8-7.2,16-16,16S4,28.8,4,20S11.2,4,20,4S36,11.2,36,20z M13.3,30.3l6.7-4.9l6.7,4.9
+			c0.2,0.1,0.4,0.1,0.6,0c0.2-0.1,0.2-0.4,0.2-0.6l-2.6-7.9l6.7-4.9c0.2-0.1,0.2-0.4,0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.3h-8.3
+			l-2.6-7.9c-0.1-0.5-0.8-0.5-1,0L16.9,16H8.6c-0.2,0-0.4,0.1-0.5,0.3c-0.1,0.2,0,0.4,0.2,0.6l6.7,4.9l-2.6,7.9
+			c-0.1,0.2,0,0.4,0.2,0.6c0.1,0.1,0.2,0.1,0.3,0.1S13.2,30.3,13.3,30.3z"></path>
+</g>
+</switch></svg></span>&nbsp;<span style="font-size: 1.125rem;">DOWNLOAD JUMIA FREE APP</span>
+                      <br>&nbsp; &nbsp; &nbsp;Get access to exclusive offers!<br>
+                    </p>
+                    <a href="" class="u-border-none u-btn u-button-style u-custom-font u-dialog-link u-heading-font u-none u-btn-2"><span class="u-file-icon u-icon u-icon-3"><img src="static/images/apple-logo-png-favpng-C2ch79UUSnZYnvLzviDV2gxbD.jpg" alt=""></span>&nbsp; <span style="font-size: 20px; font-weight: 400;">App Store</span>
+                    </a>
+                    <a href="" class="u-border-none u-btn u-button-style u-custom-font u-dialog-link u-heading-font u-none u-btn-3"><span class="u-file-icon u-icon u-icon-4"><img src="static/images/logo.png" alt=""></span>&nbsp; <span style="font-size: 1.25rem; font-weight: 400;">Google Play</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="data-layout-selected u-clearfix u-expanded-width u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-2">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-container-style u-layout-cell u-size-15-lg u-size-15-md u-size-15-xl u-size-30-sm u-size-30-xs u-layout-cell-4">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-5">
+                <div class="custom-expanded u-clearfix u-custom-html u-custom-html-1">
+                  <style></style>
+                  <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-size-15-lg u-size-15-md u-size-15-xl u-size-30-sm u-size-30-xs u-layout-cell-5">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-6">
+                <div class="custom-expanded u-clearfix u-custom-html u-custom-html-2">
+                  <style></style>
+                  <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-size-15-lg u-size-15-md u-size-15-xl u-size-30-sm u-size-30-xs u-layout-cell-6">
+              <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-7">
+                <div class="custom-expanded u-clearfix u-custom-html u-custom-html-3">
+                  <style></style>
+                  <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-size-15-lg u-size-15-md u-size-15-xl u-size-30-sm u-size-30-xs u-layout-cell-7">
+              <div class="u-container-layout u-container-layout-8">
+                <h3 class="u-text u-text-4">JUMIA INTERNATIONAL </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="custom-expanded data-layout-selected u-clearfix u-hidden-xs u-layout-wrap u-layout-wrap-3">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-8">
+              <div class="u-container-layout u-valign-middle-xs u-container-layout-9">
+                <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-4">
+                  <style></style>
+                  <p>Sample HTML. Lorem ipsum dolor sit amet, consect</p>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-9">
+              <div class="u-container-layout u-valign-top-md u-valign-top-xs u-container-layout-10">
+                <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-5">
+                  <style></style>
+                  <p>Sample HTML. Lorem ipsum dolor sit amet, consect.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><h5 class="u-text u-text-default u-text-5">JOIN US ON</h5><h5 class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-6">PAYMENT METHODS</h5><span class="u-file-icon u-icon u-icon-5"><img src="static/images/3521915.png" alt=""></span><span class="u-file-icon u-icon u-icon-6"><img src="static/images/3521915.png" alt=""></span><span class="u-file-icon u-icon u-icon-7"><img src="static/images/3521915.png" alt=""></span><span class="u-file-icon u-icon u-icon-8"><img src="static/images/3521915.png" alt=""></span><span class="u-file-icon u-icon u-icon-9"><img src="static/images/3521915.png" alt=""></span><span class="u-file-icon u-icon u-icon-10"><img src="static/images/3521915.png" alt=""></span><span class="u-file-icon u-icon u-icon-11"><img src="static/images/3521915.png" alt=""></span><span class="u-file-icon u-icon u-icon-12"><img src="static/images/3521915.png" alt=""></span><span class="u-file-icon u-icon u-icon-13"><img src="static/images/3521915.png" alt=""></span><div class="u-expanded-width u-hidden-xs u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-11">
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-6">
+                <style></style>
+                <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-12">
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-7">
+                <style></style>
+                <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-13">
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-8">
+                <style></style>
+                <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-14">
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-9">
+                <style></style>
+                <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-15">
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-10">
+                <style></style>
+                <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-16">
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-11">
+                <style></style>
+                <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-17">
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-12">
+                <style></style>
+                <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-18">
+              <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-13">
+                <style></style>
+                <p>Sample HTML. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><span class="u-icon u-icon-14"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 60 60" style=""><use xlink:href="#svg-34e7"></use></svg><svg class="u-svg-content" viewBox="0 0 60 60" x="0px" y="0px" id="svg-34e7" style="enable-background:new 0 0 60 60;"><path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M45.563,30.826l-22,15
+	C23.394,45.941,23.197,46,23,46c-0.16,0-0.321-0.038-0.467-0.116C22.205,45.711,22,45.371,22,45V15c0-0.371,0.205-0.711,0.533-0.884
+	c0.328-0.174,0.724-0.15,1.031,0.058l22,15C45.836,29.36,46,29.669,46,30S45.836,30.64,45.563,30.826z"></path></svg></span></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <p class="u-text"><span>This site was created with the </span>
+        <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow"><span>Nicepage</span>
+        </a>
+      </p>
+    </section>
+  
+</body></html>

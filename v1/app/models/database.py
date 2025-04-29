@@ -42,6 +42,7 @@ class Product(db.Model):
     stock = db.Column(db.Integer, nullable=False)
     category_name = db.Column(db.String(10), nullable=False)
     image = db.Column(db.String(100), nullable=False)
+    x_price = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return f"<Product {self.name} - Category: {self.category_name} Image url {self.image}>"

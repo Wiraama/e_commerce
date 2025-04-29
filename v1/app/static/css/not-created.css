@@ -1,0 +1,135 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 400px;
+}
+
+.u-section-1 .u-image-1 {
+  width: 1215px;
+  min-height: 384px;
+  height: auto;
+  background-image: url("../images/oops.png");
+  margin: 8px -37px 0;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding: 15px 30px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 6rem;
+  font-style: italic;
+  text-shadow: 0px 0px 30px rgba(158,9,9,1);
+  font-weight: 700;
+  margin: 8px 159px 0 auto;
+}
+
+.u-section-1 .u-text-2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-style: italic;
+  margin: 39px 67px 0 auto;
+}
+
+.u-section-1 .u-text-3 {
+  font-size: 6rem;
+  font-style: italic;
+  text-shadow: 0px 0px 30px rgba(158,9,9,1);
+  font-weight: 700;
+  margin: -242px auto 60px 91px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-image-1 {
+    width: 1013px;
+    margin-left: -36px;
+    margin-right: -36px;
+    height: auto;
+  }
+
+  .u-section-1 .u-text-3 {
+    width: auto;
+    margin-top: -240px;
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-image-1 {
+    width: 790px;
+    margin-left: -35px;
+    margin-right: -35px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .u-section-1 .u-text-1 {
+    width: auto;
+    margin-right: 24px;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: auto;
+    margin-top: 59px;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-top: -285px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-image-1 {
+    width: 606px;
+    margin-left: -33px;
+    margin-right: -33px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 4.5rem;
+  }
+
+  .u-section-1 .u-text-2 {
+    font-size: 1.25rem;
+    margin-top: 79px;
+    margin-right: 24px;
+  }
+
+  .u-section-1 .u-text-3 {
+    font-size: 4.5rem;
+    margin-top: -272px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-image-1 {
+    width: 409px;
+    margin-left: -34px;
+    margin-right: -34px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 3rem;
+    margin-top: 46px;
+    margin-right: 26px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: 34px;
+    margin-right: 8px;
+    font-size: 1rem;
+  }
+
+  .u-section-1 .u-text-3 {
+    font-size: 3rem;
+    margin-top: -117px;
+    margin-bottom: 49px;
+    margin-left: -19px;
+  }
+}
+.wirtext {
+  background-color: #4a0d0b;
+}
