@@ -274,16 +274,22 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
               <div class="u-repeater u-repeater-1">
 			    {% if products %}
 			      {% for product in products[4:10] %}
-					<div class="u-container-style u-list-item u-repeater-item">
-					  <div class="u-container-layout u-similar-container u-container-layout-10">
-						<img class="u-expanded-width u-hover-feature u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+					<a href="{{ url_for('main.not_created') }}" class="u-container-style u-list-item u-repeater-item">
+					  <div class="u-container-layout container u-similar-container u-container-layout-10">
+						<img class="u-expanded-width image u-hover-feature u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+						<div class="badge">
+						  {{ -((product.x_price - product.price)/(product.x_price) * 100) | round(1) }}%
+						</div>
 						<p class="u-custom-font u-heading-font u-text u-text-default u-text-5"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
 						  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
 						  <br><span style="font-size: 0.8125rem;" ><s>ksh {{ product.x_price }}</s></span>
 						  <br>{{ product.stock }} items&nbsp;left
 						</p>
+						<div class="stock-bar-container">
+						  <div class="stock-bar" style="width: {{ (product.stock / 100) * 100 }}%;"></div>
+						</div>
 					  </div>
-					</div>
+					</a>
 				  {% endfor %}
 				{% endif %}
               </div>
@@ -297,16 +303,19 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
               <div class="u-repeater u-repeater-2">
 			    {% if products %}
 					{% for product in products[11:17] %}
-						<div class="u-container-style u-list-item u-repeater-item">
+						<a href="{{ url_for('main.not_created') }}" class="u-container-style u-list-item u-repeater-item">
 						  <div class="u-container-layout u-similar-container u-container-layout-17">
 							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-7" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<div class="badge">
+							  {{ -((product.x_price - product.price)/(product.x_price) * 100) | round(1) }}%
+							</div>
 							<p class="u-custom-font u-heading-font u-text u-text-default u-text-12"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
 							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
 							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
 							  <br>
 							</p>
 						  </div>
-						</div>
+						</a>
 					{% endfor %}
 				{% endif %}
               </div>
@@ -325,16 +334,19 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 			    {% if products %}
 					{% for product in products %}
 					  {% if product.category_name == "mens" %}
-						<div class="u-container-style u-list-item u-repeater-item">
+						<a href="{{ url_for('main.not_created') }}" class="u-container-style u-list-item u-repeater-item">
 						  <div class="u-container-layout u-similar-container u-container-layout-2">
 							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<div class="badge">
+							  {{ -((product.x_price - product.price)/(product.x_price) * 100) | round(1) }}%
+							</div>
 							<p class="u-custom-font u-heading-font u-text u-text-default u-text-2"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
 							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
 							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
 							  <br>
 							</p>
 						  </div>
-						</div>
+						</a>
 					  {% endif %}
 					{% endfor %}
 				{% endif %}
@@ -354,16 +366,19 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 			    {% if products %}
 					{% for product in products %}
 					  {% if product.category_name == "womens" %}
-						<div class="u-container-style u-list-item u-repeater-item">
+						<a href="{{ url_for('main.not_created') }}" class="u-container-style u-list-item u-repeater-item">
 						  <div class="u-container-layout u-similar-container u-container-layout-2">
 							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<div class="badge">
+							  {{ -((product.x_price - product.price)/(product.x_price) * 100) | round(1) }}%
+							</div>
 							<p class="u-custom-font u-heading-font u-text u-text-default u-text-2"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
 							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
 							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
 							  <br>
 							</p>
 						  </div>
-						</div>
+						</a>
 					  {% endif %}
 					{% endfor %}
 				{% endif %}
@@ -383,16 +398,19 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 			    {% if products %}
 					{% for product in products %}
 					  {% if product.category_name == "kids" %}
-						<div class="u-container-style u-list-item u-repeater-item">
+						<a href="{{ url_for('main.not_created') }}" class="u-container-style u-list-item u-repeater-item">
 						  <div class="u-container-layout u-similar-container u-container-layout-2">
 							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<div class="badge">
+							  {{ -((product.x_price - product.price)/(product.x_price) * 100) | round(1) }}%
+							</div>
 							<p class="u-custom-font u-heading-font u-text u-text-default u-text-2"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
 							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
 							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
 							  <br>
 							</p>
 						  </div>
-						</div>
+						</a>
 					  {% endif %}
 					{% endfor %}
 				{% endif %}
@@ -412,16 +430,19 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 			    {% if products %}
 					{% for product in products %}
 					  {% if product.category_name == "unisex" %}
-						<div class="u-container-style u-list-item u-repeater-item">
+						<a href="{{ url_for('main.not_created') }}" class="u-container-style u-list-item u-repeater-item">
 						  <div class="u-container-layout u-similar-container u-container-layout-2">
 							<img class="u-expanded-width u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{{ product.image }}" alt="" data-image-width="1500" data-image-height="1500">
+							<div class="badge">
+							  {{ -((product.x_price - product.price)/(product.x_price) * 100) | round(1) }}%
+							</div>
 							<p class="u-custom-font u-heading-font u-text u-text-default u-text-2"><span style="font-weight: 700; font-size: 1.25rem;">{{ product.name }}</span>
 							  <br><span style="font-weight: 700;">Kshs: {{ product.price }}</span>
 							  <br><span style="font-size: 0.8125rem;"><s>ksh {{ product.x_price }}</s></span>
 							  <br>
 							</p>
 						  </div>
-						</div>
+						</a>
 					  {% endif %}
 					{% endfor %}
 				{% endif %}

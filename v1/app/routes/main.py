@@ -16,6 +16,7 @@ def index():
 @main.route('/admin', methods=['GET', 'POST'])
 def admin():
     if request.method == 'POST':
+        add_product()
         return redirect(url_for('main.admin'))
 
     products = Product.query.order_by(Product.id.desc()).all()
