@@ -2,8 +2,6 @@ from flask_login import UserMixin # to manage session correctly
 from flask_sqlalchemy import SQLAlchemy
 from enum import Enum
 from sqlalchemy.types import Enum as SQLAlchemyEnum
-from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
 
 db = SQLAlchemy()
 
