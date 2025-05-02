@@ -9,7 +9,7 @@ main = Blueprint('main', __name__)
 def index():
     totals, cart = request_cart()
     products = Product.query.order_by(Product.id.desc()).all()
-    list(map(lambda product: print(product.image), products))
+    list(products)
 
     return render_template('index.html', cart=cart, totals=totals, products=products)
 
@@ -20,7 +20,7 @@ def admin():
         return redirect(url_for('main.admin'))
 
     products = Product.query.order_by(Product.id.desc()).all()
-    list(map(lambda product: print(product.image), products))
+    list(products)
     return render_template('Admin.html', products=products)
 
 @main.route('/delete', methods=['POST'])
